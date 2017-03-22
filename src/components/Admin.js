@@ -1,0 +1,32 @@
+import React, { PropTypes as T } from 'react';
+import styles from './styles.module.css';
+
+import Train from './Train';
+
+export class Admin extends React.Component {
+
+  render() {
+    const { trains, updateTrains } = this.props;
+    const Train = ({ token, id, line, status, canEdit, updateTrains })
+
+
+    return (
+      <div id="wrapper">
+        <h2>Manage Trains:</h2>
+        <div className={styles.flexContainer}>
+          {trains.map(train =>
+            <Train
+              key={train.id}
+              {...train}
+              updateTrains={updateTrains}
+              canEdit={true}
+              token={authStatus.token}
+            />
+          )}
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Admin;
